@@ -1,0 +1,7 @@
+month,hvfhs_license_num,brand,kpi_status,wav_response_p50_min,nonwav_response_p50_min,wav_response_p90_min,nonwav_response_p90_min,m3_p90_gap_min,nonwav_evidence_coverage,nonwav_service_rate_10min
+2026-04,HV0003,Uber,MEETS,4.2333,3.1833,8.0667,8.9833,-0.9167,0.9832,0.9234
+2026-04,HV0005,Lyft,NOT MEASURABLE,,3.2333,,6.8833,,0.9842,0.9697
+2026-05,HV0003,Uber,MEETS (estimate),4.55,3.4833,8.4667,9.5167,-1.05,0.9814,0.9111
+2026-05,HV0005,Lyft,NOT MEASURABLE,,3.5,,7.45,,0.9852,0.9597
+2026-07,HV0003,Uber,MEETS (estimate),4.5333,3.4833,9.35,9.5667,-0.2167,0.9824,0.9101
+2026-07,HV0005,Lyft,NOT MEASURABLE,,3.35,,7.3167,,0.9853,0.961

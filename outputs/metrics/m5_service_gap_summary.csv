@@ -1,0 +1,4 @@
+month,hvfhs_license_num,brand,cells_judged,cells_significantly_below,cells_below_point_estimate,requests_in_judged_cells,m5_share_of_demand_in_below_target_cells,share_of_late_arrivals_in_those_cells,share_of_demand_below_point_estimate,requests_in_low_volume_cells
+2026-04,HV0003,Uber,21,1,2,40268,0.0136,0.047,0.0182,179
+2026-05,HV0003,Uber,21,1,2,40126,0.0165,0.0478,0.0221,189
+2026-07,HV0003,Uber,21,5,7,41037,0.0724,0.1804,0.1041,191

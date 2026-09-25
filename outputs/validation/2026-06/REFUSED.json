@@ -1,0 +1,7 @@
+{
+  "month": "2026-06",
+  "status": "REFUSED",
+  "stopped_by": "ReconciliationError",
+  "reason": "ALL: file 20,775,868 vs tlc_monthly_report 21,230,100 (-2.140%)",
+  "note": "Nothing from this month was published. Fix the cause (or wait for the control total) and rerun."
+}

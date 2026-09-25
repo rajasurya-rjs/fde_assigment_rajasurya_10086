@@ -1,0 +1,23 @@
+# Python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Large raw trip files (~0.5 GB each) are NOT committed. Their manifests (URL, SHA-256, byte count,
+# upstream Last-Modified) ARE committed, so anyone re-fetching can prove they got identical bytes.
+data/raw/tlc_trips/*.parquet
+data/raw/tlc_trips/superseded/*.parquet*
+!data/raw/tlc_trips/superseded/*.manifest.json
+
+# In-flight artefacts of an interrupted run
+*.part
+*.incoming
+*.incoming.manifest.json
+*.tmp
+*.staging/
+
+# Rebuildable state
+data/warehouse/
+logs/
+.DS_Store

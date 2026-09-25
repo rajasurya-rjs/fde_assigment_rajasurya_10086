@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="890" viewBox="0 0 1480 890" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Workflow and data model">
+<title>Workflow and data model</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5a6a"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a3261f"/></marker></defs>
+<rect width="1480" height="890" fill="#ffffff"/>
+<text x="20" y="32" font-size="19" font-weight="bold" fill="#1f3a5f" text-anchor="start">Workflow — what happens to one wheelchair-accessible (WAV) request</text>
+<rect x="40" y="70" width="210" height="88" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="50" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">REQUESTED</text>
+<text x="50" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">request_datetime</text>
+<text x="50" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Rider asks for a WAV</text>
+<text x="50" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(wav_request_flag = &#x27;Y&#x27;)</text>
+<rect x="400" y="70" width="210" height="88" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="410" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">VEHICLE ON SCENE</text>
+<text x="410" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">on_scene_datetime</text>
+<text x="410" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">WAV arrives at pickup</text>
+<text x="410" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(wav_match_flag = &#x27;Y&#x27;)</text>
+<rect x="760" y="70" width="210" height="88" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="770" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">PICKED UP</text>
+<text x="770" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">pickup_datetime</text>
+<text x="770" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Rider boarded; ramp /</text>
+<text x="770" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">securement complete</text>
+<rect x="1120" y="70" width="210" height="88" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="1130" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">DROPPED OFF</text>
+<text x="1130" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">dropoff_datetime</text>
+<text x="1130" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Trip completed</text>
+<text x="1130" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(only completed trips exist)</text>
+<line x1="252" y1="114.0" x2="398" y2="114.0" stroke="#8a5a00" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="325.0" y="92.0" font-size="11" font-weight="normal" fill="#8a5a00" text-anchor="middle">response_s  —  REGULATED:</text>
+<text x="325.0" y="106.85" font-size="11" font-weight="normal" fill="#8a5a00" text-anchor="middle">must be &lt; 10 min for ≥ 90%</text>
+<line x1="612" y1="114.0" x2="758" y2="114.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="685.0" y="92.0" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">curbside_s  —  boarding</text>
+<text x="685.0" y="106.85" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">(not regulated)</text>
+<line x1="972" y1="114.0" x2="1118" y2="114.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="1045.0" y="92.0" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">ride_s</text>
+<path d="M145.0,176 V184 H865.0 V176" fill="none" stroke="#1f3a5f" stroke-width="1.4"/>
+<text x="505.0" y="202" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="middle">wait_s = response_s + curbside_s   (what the rider experiences; exact for clean records)</text>
+<path d="M70,158 V224" fill="none" stroke="#a3261f" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-red)"/>
+<rect x="20" y="226" width="340" height="76" rx="6" fill="#fbe9e7" stroke="#a3261f" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="30" y="245" font-size="13" font-weight="bold" fill="#a3261f" text-anchor="start">CANCELLED / NEVER SERVED</text>
+<text x="30" y="263.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Not in any public data. The rule&#x27;s</text>
+<text x="30" y="279.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">denominator includes them; the trip</text>
+<text x="30" y="295.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">files do not.</text>
+<rect x="400" y="228" width="590" height="76" rx="6" fill="#f4f6f8" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="410" y="247" font-size="13" font-weight="bold" fill="#1f3a5f" text-anchor="start">Actors, interventions, outcome</text>
+<text x="410" y="265.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Dispatcher = HVFHS licensee (HV0003 Uber via base B03404; HV0005 Lyft via B03406)</text>
+<text x="410" y="281.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Intervention: WAV dispatch obligation + TLC compliance notice (30 days to comply)</text>
+<text x="410" y="297.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Outcome: served &lt; 10 min (compliance) · rider wait · gap vs non-WAV riders</text>
+<rect x="1020" y="228" width="420" height="76" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<text x="1030" y="247" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">Where delay accumulates (evidence, Apr–Jul 2026)</text>
+<text x="1030" y="265.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Uber WAV P90 8.1–9.3 min (≤ non-WAV); P50 ~1 min slower</text>
+<text x="1030" y="281.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">79–85% of WAV riders&#x27; EXTRA wait is curbside,</text>
+<text x="1030" y="297.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">i.e. after arrival — outside the 10-minute clock</text>
+<line x1="20" y1="327" x2="1460" y2="327" stroke="#d5dde6" stroke-width="1"/>
+<text x="20" y="353" font-size="19" font-weight="bold" fill="#1f3a5f" text-anchor="start">Data model (DuckDB) — keys, grain and why every join is safe</text>
+<rect x="20" y="375" width="300" height="134" rx="6" fill="#f4f6f8" stroke="#4a5a6a" stroke-width="1.2"/>
+<rect x="20" y="375" width="300" height="26" rx="6" fill="#4a5a6a"/>
+<text x="30" y="393" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">raw trips (Parquet, read in place)</text>
+<text x="30" y="417" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: 1 row = 1 completed trip</text>
+<text x="30" y="435" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK (none in source) → source_row_id =</text>
+<text x="30" y="451" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">   row position in the preserved file</text>
+<text x="30" y="467" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">hvfhs_license_num, PULocationID</text>
+<text x="30" y="483" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">request / on_scene / pickup / dropoff</text>
+<text x="30" y="499" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">wav_request_flag, wav_match_flag</text>
+<rect x="400" y="440" width="280" height="102" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<rect x="400" y="440" width="280" height="26" rx="6" fill="#1f3a5f"/>
+<text x="410" y="458" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">ref_licensee</text>
+<text x="410" y="482" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: 1 row = 1 HVFHS licence</text>
+<text x="410" y="500" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK hvfhs_license_num</text>
+<text x="410" y="516" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">brand (Uber, Lyft, …)</text>
+<text x="410" y="532" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">control_key (&#x27;UBER&#x27; / &#x27;LYFT&#x27;)</text>
+<rect x="400" y="560" width="280" height="102" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<rect x="400" y="560" width="280" height="26" rx="6" fill="#1f3a5f"/>
+<text x="410" y="578" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">ref_zone</text>
+<text x="410" y="602" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: 1 row = 1 taxi zone (265)</text>
+<text x="410" y="620" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK location_id</text>
+<text x="410" y="636" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">borough, zone</text>
+<text x="410" y="652" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">is_nyc_borough</text>
+<rect x="760" y="375" width="330" height="150" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<rect x="760" y="375" width="330" height="26" rx="6" fill="#0f6e6e"/>
+<text x="770" y="393" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">fct_wav_trip</text>
+<text x="770" y="417" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: 1 row = 1 WAV-requested trip</text>
+<text x="770" y="435" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK (month, source_row_id)</text>
+<text x="770" y="451" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">FK hvfhs_license_num → ref_licensee</text>
+<text x="770" y="467" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">FK pu_location_id → ref_zone</text>
+<text x="770" y="483" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">response_s, curbside_s, wait_s, ride_s</text>
+<text x="770" y="499" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">failed_rules, warned_rules, is_clean</text>
+<text x="770" y="515" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(quarantined rows kept, with reasons)</text>
+<rect x="760" y="675" width="330" height="118" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<rect x="760" y="675" width="330" height="26" rx="6" fill="#0f6e6e"/>
+<text x="770" y="693" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">agg_segment_month</text>
+<text x="770" y="717" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: month × licensee × WAV × borough × band</text>
+<text x="770" y="735" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK (month, level, licensee, wav, borough, band)</text>
+<text x="770" y="751" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">n_records, n_clean, n_clean_under</text>
+<text x="770" y="767" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">P50/P90 response, mean wait parts</text>
+<text x="770" y="783" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">level &#x27;dispatcher&#x27; = rule grain</text>
+<rect x="1160" y="375" width="300" height="134" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<rect x="1160" y="375" width="300" height="26" rx="6" fill="#8a5a00"/>
+<text x="1170" y="393" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">evidence tables</text>
+<text x="1170" y="417" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: month (× rule / check / control)</text>
+<text x="1170" y="435" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">validation_rule_result</text>
+<text x="1170" y="451" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">file_check, reconciliation</text>
+<text x="1170" y="467" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">diag_negative_response, diag_segment</text>
+<text x="1170" y="483" font-size="12" font-weight="bold" fill="#1b2733" text-anchor="start">PK month_status (FINAL/PROV.)</text>
+<text x="1170" y="499" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">pipeline_run (audit, append-only)</text>
+<rect x="1160" y="675" width="300" height="134" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<rect x="1160" y="675" width="300" height="26" rx="6" fill="#1f3a5f"/>
+<text x="1170" y="693" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">metric views (always recomputed)</text>
+<text x="1170" y="717" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start" font-style="italic">grain: dispatcher × month (M5: cell)</text>
+<text x="1170" y="735" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">m1_m2_kpi_dispatcher_month</text>
+<text x="1170" y="751" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">m1_m2_kpi_ytd (additive counts)</text>
+<text x="1170" y="767" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">m3_response_gap</text>
+<text x="1170" y="783" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">m4_stage_decomposition</text>
+<text x="1170" y="799" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">m5_service_gap_cells / _summary</text>
+<line x1="320" y1="415" x2="758" y2="415" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="539.0" y="408.0" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">WAV-requested rows</text>
+<path d="M170.0,509 V735 H758" fill="none" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="178.0" y="727" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="start">all rows (WAV and non-WAV), GROUPING SETS</text>
+<line x1="680" y1="490" x2="758" y2="467" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="719.0" y="472.5" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">1 : many</text>
+<line x1="680" y1="610" x2="758" y2="487" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="719.0" y="564.5" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">1 : many</text>
+<line x1="1090" y1="435" x2="1158" y2="435" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1090" y1="735" x2="1158" y2="735" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1310.0" y1="509" x2="1310.0" y2="673" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="1310.0" y="595.0" font-size="11" font-weight="normal" fill="#4a5a6a" text-anchor="middle">          month_status</text>
+<text x="20" y="837.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Join safety: every join is a LEFT JOIN onto a PRIMARY KEY (many trips → one zone / one licensee), so it cannot drop or multiply trips. FKs are logical: enforced by rules REF01/REF02 (violations quarantined), not DB constraints.</text>
+<text x="20" y="853.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Tested: dispatcher totals = fact table = sum of cells (tests/test_metrics.py::test_aggregates_reconcile_to_the_fact_table).</text>
+</svg>

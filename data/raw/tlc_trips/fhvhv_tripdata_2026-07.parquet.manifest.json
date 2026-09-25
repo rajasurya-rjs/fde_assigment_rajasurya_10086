@@ -1,0 +1,13 @@
+{
+  "attempts": 1,
+  "bytes": 511176663,
+  "content_encoding": "identity",
+  "content_length_header": 511176663,
+  "etag": "\"0075ffa5d0ecb2946a4b4e8f2d7158a5-30\"",
+  "last_modified": "Thu, 17 Sep 2026 14:43:53 GMT",
+  "retrieved_at": "2026-09-25T11:01:52Z",
+  "seconds": 19.8,
+  "sha256": "8da280d9d23813aae02a6e1d1d1caa8b96eb5e8d38efcbc9a570faf1e418f5a8",
+  "source": "trips",
+  "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-07.parquet"
+}

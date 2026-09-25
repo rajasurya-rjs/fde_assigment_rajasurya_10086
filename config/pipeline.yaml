@@ -1,0 +1,74 @@
+# WAV Service Scorecard pipeline configuration.
+# Every threshold below is a business decision; the comment says where it comes from.
+
+paths:
+  raw: data/raw                      # immutable, preserved source inputs (+ manifests)
+  warehouse: data/warehouse/wav.duckdb
+  outputs: outputs
+  logs: logs
+
+sources:
+  trips:
+    # NYC TLC High Volume FHV trip records, one Parquet file per pickup month.
+    url_template: "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_{month}.parquet"
+  zones:
+    url: "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
+  base_aggregate:
+    # NYC Open Data (Socrata SODA API) - "FHV Base Aggregate Report", dataset 2v9c-2k7f.
+    endpoint: "https://data.cityofnewyork.us/resource/2v9c-2k7f.json"
+    # Small pages keep the pagination path exercised on every production run,
+    # so it cannot silently rot. The dataset has ~300-400 rows per month.
+    page_size: 200
+  monthly_reports:
+    # TLC "Aggregated Reports" CSV: monthly industry indicators by license class.
+    url: "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv"
+    license_class: "FHV - High Volume"
+
+http:
+  timeout_s: 120
+  retries: 3
+  backoff_s: 2
+  chunk_bytes: 1048576
+  # nyc.gov (the TLC monthly-report CSV) answers HTTP 403 to non-browser User-Agents, including a
+  # descriptive bot UA. A standard browser UA string is sent; the file itself is public open data.
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+
+kpi:
+  # 35 RCNY 59B-17(f)(3), amended 29 Jan 2025: an Accessible Vehicle dispatcher must
+  # service at least 90% of WAV requests "in under ten (10) minutes".
+  # "Under" is read strictly: a response of exactly 600 s does NOT meet the standard.
+  threshold_seconds: 600
+  target_rate: 0.90
+  # Measurability gate. The standard tolerates a 10% failure budget. If more than 10% of a
+  # dispatcher's WAV records have an untrustworthy response time, the unknowns alone can
+  # consume the whole budget, so pass/fail cannot be determined. The KPI is then withheld.
+  measurability_gate: 0.90
+  # Minimum clean WAV requests before a borough x time-band cell is judged (M5).
+  # Below this, one or two slow trips swing the rate by >1 point.
+  min_cell_requests: 100
+  # Standard operating periods (by request hour, local NYC time). Not tuned to results.
+  hour_bands:
+    - [0, 6, "00-06 overnight"]
+    - [6, 10, "06-10 AM peak"]
+    - [10, 16, "10-16 midday"]
+    - [16, 20, "16-20 PM peak"]
+    - [20, 24, "20-24 evening"]
+
+validation:
+  # File-level: if more than this share of rows fail ERROR rules, the file itself is
+  # suspect (wrong file, broken extract) and the month is stopped, not published.
+  max_error_row_pct: 5.0
+  # Pickups outside the file's month mean the partition contract is broken.
+  max_out_of_month_pct: 1.0
+  # A day with less than this share of the median daily volume suggests a truncated file.
+  min_day_share_of_median: 0.5
+  # Per-licensee day below this share of that licensee's median day -> WARN (localizes gaps).
+  # Added after June 2026 failed reconciliation (-2.1%) to show WHERE a shortfall sits; normal
+  # weekday/weekend swings in May-July 2026 stay above ~0.79. It never blocks publication by itself.
+  min_licensee_day_share_of_median: 0.7
+  # Long waits are kept in the KPI (they are the failures the standard counts) but flagged.
+  long_response_warn_seconds: 3600
+
+reconciliation:
+  # File trip counts vs independently published control totals.
+  tolerance_pct: 0.5

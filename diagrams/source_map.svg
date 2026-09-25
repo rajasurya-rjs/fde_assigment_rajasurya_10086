@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="760" viewBox="0 0 1480 760" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Source map: business question to metric">
+<title>Source map: business question to metric</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5a6a"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a3261f"/></marker></defs>
+<rect width="1480" height="760" fill="#ffffff"/>
+<text x="20" y="32" font-size="19" font-weight="bold" fill="#1f3a5f" text-anchor="start">Source map — business question → required information → source system → fields → metric</text>
+<text x="20" y="54" font-size="13" font-weight="normal" fill="#4a5a6a" text-anchor="start">Client: NYC TLC accessibility compliance. KPI: share of WAV requests with vehicle on scene in under 10 minutes (35 RCNY §59B-17(f)(3), target ≥ 90%).</text>
+<rect x="20" y="70" width="300" height="30" rx="4" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="30" y="90" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">Business question</text>
+<rect x="340" y="70" width="250" height="30" rx="4" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="350" y="90" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">Required information</text>
+<rect x="610" y="70" width="400" height="30" rx="4" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="620" y="90" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">Source system</text>
+<rect x="1030" y="70" width="250" height="30" rx="4" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1040" y="90" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">Fields used (table / file / API)</text>
+<rect x="1300" y="70" width="160" height="30" rx="4" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1310" y="90" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="start">Metric / output</text>
+<rect x="20" y="112" width="300" height="118" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="30" y="134.0" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">Does each dispatcher (Uber, Lyft) serve</text>
+<text x="30" y="151.55" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">≥ 90% of WAV requests in under 10</text>
+<text x="30" y="169.1" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">minutes?</text>
+<rect x="340" y="112" width="250" height="118" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="350" y="134.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Which trips were WAV requests;</text>
+<text x="350" y="150.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">when requested; when the vehicle</text>
+<text x="350" y="166.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">arrived; who dispatched</text>
+<rect x="610" y="112" width="400" height="118" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="620" y="131" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">S1  TLC High-Volume FHV trip records</text>
+<text x="620" y="149.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Owner: TLC; submitted by Uber/Lyft (§59D-14)</text>
+<text x="620" y="165.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Mode: FILE — Parquet over HTTPS, monthly</text>
+<text x="620" y="181.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Grain: 1 row = 1 COMPLETED trip; no trip ID</text>
+<text x="620" y="197.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">~21M rows / 0.5 GB per month; ~2-month lag</text>
+<rect x="1030" y="112" width="250" height="118" rx="6" fill="#ffffff" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="1040" y="134.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">wav_request_flag,</text>
+<text x="1040" y="150.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">request_datetime,</text>
+<text x="1040" y="166.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">on_scene_datetime,</text>
+<text x="1040" y="182.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">hvfhs_license_num</text>
+<rect x="1300" y="112" width="160" height="118" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1310" y="136.0" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">M1  10-min service rate</text>
+<text x="1310" y="152.2" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">M2  evidence coverage</text>
+<line x1="320" y1="171.0" x2="339" y2="171.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="171.0" x2="609" y2="171.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1010" y1="171.0" x2="1029" y2="171.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1280" y1="171.0" x2="1299" y2="171.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="244" width="300" height="92" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="30" y="266.0" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">Are WAV riders served as well as other</text>
+<text x="30" y="283.55" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">riders? Where does their extra wait</text>
+<text x="30" y="301.1" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">accrue?</text>
+<rect x="340" y="244" width="250" height="92" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="350" y="266.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">The same event times for non-WAV</text>
+<text x="350" y="282.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">trips; time from arrival to</text>
+<text x="350" y="298.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">boarding</text>
+<rect x="610" y="244" width="400" height="92" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="620" y="263" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">S1  (same file, non-WAV rows as the baseline)</text>
+<text x="620" y="281.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">on_scene_datetime: dictionary says &#x27;WAV only&#x27;;</text>
+<text x="620" y="297.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">observed 100% populated in 2026 files</text>
+<rect x="1030" y="244" width="250" height="92" rx="6" fill="#ffffff" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="1040" y="266.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">+ pickup_datetime, wav_match_flag</text>
+<rect x="1300" y="244" width="160" height="92" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1310" y="268.0" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">M3  P90 gap vs non-WAV</text>
+<text x="1310" y="284.2" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">M4  curbside share</text>
+<line x1="320" y1="290.0" x2="339" y2="290.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="290.0" x2="609" y2="290.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1010" y1="290.0" x2="1029" y2="290.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1280" y1="290.0" x2="1299" y2="290.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="350" width="300" height="88" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="30" y="372.0" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">Where and when is service below the</text>
+<text x="30" y="389.55" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">standard?</text>
+<rect x="340" y="350" width="250" height="88" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="350" y="372.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Borough of each pickup; hour of</text>
+<text x="350" y="388.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">each request</text>
+<rect x="610" y="350" width="400" height="88" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="620" y="369" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">S2  TLC taxi zone lookup</text>
+<text x="620" y="387.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Owner: TLC · Mode: FILE — CSV over HTTPS</text>
+<text x="620" y="403.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Grain: 1 row = 1 zone (265; 264/265 = unknown)</text>
+<rect x="1030" y="350" width="250" height="88" rx="6" fill="#ffffff" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="1040" y="372.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">PULocationID → LocationID</text>
+<text x="1040" y="388.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(unique) → Borough</text>
+<rect x="1300" y="350" width="160" height="88" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1310" y="374.0" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">M5  share of demand in</text>
+<text x="1310" y="390.2" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">     below-target cells</text>
+<line x1="320" y1="394.0" x2="339" y2="394.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="394.0" x2="609" y2="394.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1010" y1="394.0" x2="1029" y2="394.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1280" y1="394.0" x2="1299" y2="394.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="452" width="300" height="128" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="30" y="474.0" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">Did we receive the whole month? Can the</text>
+<text x="30" y="491.55" font-size="13" font-weight="bold" fill="#1b2733" text-anchor="start">numbers be called FINAL?</text>
+<rect x="340" y="452" width="250" height="128" rx="6" fill="#f4f6f8" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="350" y="474.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Trip counts published</text>
+<text x="350" y="490.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">independently of the file, per</text>
+<text x="350" y="506.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">licensee and in total</text>
+<rect x="610" y="452" width="400" height="128" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<text x="620" y="471" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">S3  Open Data &#x27;FHV Base Aggregate Report&#x27;</text>
+<text x="620" y="489.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Owner: TLC · Mode: API — Socrata SODA JSON, paginated</text>
+<text x="620" y="505.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Grain: base × month (&#x27;UBER&#x27;, &#x27;LYFT&#x27; rows)</text>
+<text x="620" y="521.4" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">S4  TLC monthly industry report</text>
+<text x="620" y="537.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Owner: TLC · Mode: FILE — CSV; grain: class × month,</text>
+<text x="620" y="553.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">trips PER DAY (rounded) — more timely than S3</text>
+<rect x="1030" y="452" width="250" height="128" rx="6" fill="#ffffff" stroke="#8a9aab" stroke-width="1.2"/>
+<text x="1040" y="474.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">total_dispatched_trips (S3);</text>
+<text x="1040" y="490.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Trips Per Day × days in month</text>
+<text x="1040" y="506.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(S4)</text>
+<rect x="1300" y="452" width="160" height="128" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1310" y="476.0" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">FINAL / PROVISIONAL /</text>
+<text x="1310" y="492.2" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">month refused</text>
+<line x1="320" y1="516.0" x2="339" y2="516.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="516.0" x2="609" y2="516.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1010" y1="516.0" x2="1029" y2="516.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1280" y1="516.0" x2="1299" y2="516.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="20" y="594" width="300" height="70" rx="6" fill="#fbe9e7" stroke="#a3261f" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="30" y="616.0" font-size="13" font-weight="bold" fill="#a3261f" text-anchor="start">How many WAV requests were never served,</text>
+<text x="30" y="633.55" font-size="13" font-weight="bold" fill="#a3261f" text-anchor="start">or cancelled?</text>
+<rect x="340" y="594" width="250" height="70" rx="6" fill="#fbe9e7" stroke="#a3261f" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="350" y="616.0" font-size="12" font-weight="normal" fill="#a3261f" text-anchor="start">Request-level records including</text>
+<text x="350" y="632.2" font-size="12" font-weight="normal" fill="#a3261f" text-anchor="start">cancellations</text>
+<rect x="610" y="594" width="400" height="70" rx="6" fill="#fbe9e7" stroke="#a3261f" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="620" y="613" font-size="13" font-weight="bold" fill="#a3261f" text-anchor="start">GAP — no public source</text>
+<text x="620" y="631.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Lives only in Uber/Lyft dispatch systems;</text>
+<text x="620" y="647.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">trip records contain completed trips only.</text>
+<rect x="1030" y="594" width="430" height="70" rx="6" fill="#fbe9e7" stroke="#a3261f" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="1040" y="616.0" font-size="12" font-weight="normal" fill="#a3261f" text-anchor="start">Limitation: every rate is measured on completed trips.</text>
+<text x="1040" y="632.2" font-size="12" font-weight="normal" fill="#a3261f" text-anchor="start">If unserved requests count as failures, true compliance is lower.</text>
+<text x="20" y="686" font-size="14" font-weight="bold" fill="#1f3a5f" text-anchor="start">Grain mismatches handled explicitly</text>
+<text x="20" y="706.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">• Trips (1 row = 1 trip) are aggregated to licensee × month before comparing with S3, and to all-HVFHS × month for S4 (per-day average × days; rounding tolerance ±0.5%).</text>
+<text x="20" y="722.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">• S3/S4 are tabulated from the same licensee submissions as S1: they prove we RECEIVED the whole file, not that the licensee SUBMITTED every trip.</text>
+<text x="20" y="738.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">• Zone lookup joins on its primary key (many trips → one zone) with a LEFT JOIN: an unknown zone is flagged (REF02), never silently dropped.</text>
+</svg>

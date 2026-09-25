@@ -1,0 +1,12 @@
+{
+  "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+  "expected_rows": 0,
+  "order": "base_license_number,:id",
+  "page_size": 200,
+  "pages": [],
+  "retrieved_at": "2026-09-25T11:35:33Z",
+  "retrieved_rows": 0,
+  "source": "base_aggregate",
+  "status": "not_published",
+  "where": "year=2026 AND month=6"
+}

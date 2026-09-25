@@ -1,0 +1,3 @@
+year,hvfhs_license_num,brand,months_included,n_months,wav_requests,m2_evidence_coverage,m1_service_rate_10min,m1_bound_low,m1_bound_high,kpi_status,all_months_final
+2026,HV0003,Uber,2026-04 2026-05 2026-07,3,128385,0.9502,0.9427,0.8957,0.9455,MEETS (estimate),false
+2026,HV0005,Lyft,2026-04 2026-05 2026-07,3,72778,0.4011,,0.3339,0.9328,NOT MEASURABLE,false

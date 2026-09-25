@@ -1,0 +1,24 @@
+2026-09-25 16:28:10 INFO    wavpipe.pipeline | run 20260925T105810314Z: months=['2026-05'] offline=False refresh=False allow_unreconciled=False
+2026-09-25 16:28:10 INFO    wavpipe.ingest | [zones] using preserved raw taxi_zone_lookup.csv (sha256 1a99e1050922 verified)
+2026-09-25 16:28:10 INFO    wavpipe.validate | ZON01 PASS  Zone lookup schema contract | observed=4 contracted columns OK expected=4 contracted columns with fixed types 
+2026-09-25 16:28:10 INFO    wavpipe.validate | ZON02 PASS  Zone lookup: LocationID unique (valid join key) | observed=265 rows, 265 distinct ids (1-265) expected=rows == distinct ids 
+2026-09-25 16:28:10 INFO    wavpipe.pipeline | ==== 2026-05: start
+2026-09-25 16:28:10 INFO    wavpipe.ingest | [trips] using preserved raw fhvhv_tripdata_2026-05.parquet (sha256 e2b633a5be22 verified)
+2026-09-25 16:28:10 INFO    wavpipe.ingest | [base_aggregate] using preserved API pages for 2026-05 (309 rows)
+2026-09-25 16:28:11 WARNING wavpipe.ingest | [monthly_reports] attempt 1/3 failed: truncated body: received 79,774 of 24,863 bytes - retrying in 2s
+2026-09-25 16:28:13 WARNING wavpipe.ingest | [monthly_reports] attempt 2/3 failed: truncated body: received 79,774 of 24,863 bytes - retrying in 4s
+2026-09-25 16:28:17 WARNING wavpipe.ingest | [monthly_reports] attempt 3/3 failed: truncated body: received 79,774 of 24,863 bytes
+2026-09-25 16:28:17 WARNING wavpipe.pipeline | [monthly_reports] unavailable ([monthly_reports] giving up on https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv after 3 attempts: truncated body: received 79,774 of 24,863 bytes); fallback control total skipped
+2026-09-25 16:28:40 INFO    wavpipe.validate | FIL01 PASS  Trip file schema contract | observed=10 contracted columns OK expected=10 contracted columns with fixed types 15 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, originating_base_num, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time
+2026-09-25 16:28:40 INFO    wavpipe.validate | FIL03 PASS  Every calendar day has pickups | observed=31 of 31 days expected=31 days 
+2026-09-25 16:28:40 INFO    wavpipe.validate | FIL04 PASS  No day below 50% of the median daily volume | observed=min 545,860 / median 710,052 expected=>= 355,026 trips per day Low days are reported, not dropped (could be weather/holiday or a partial extract).
+2026-09-25 16:28:43 INFO    wavpipe.validate | FIL02 PASS  Rows read by validation scan == rows declared in Parquet footer | observed=22,125,744 expected=22,125,744 
+2026-09-25 16:28:43 INFO    wavpipe.validate | FIL05 PASS  Pickups outside the file month (partition contract) | observed=0 rows (0.000%) expected=<= 1.0% 
+2026-09-25 16:28:43 INFO    wavpipe.validate | FIL06 PASS  Rows failing any ERROR rule (whole file) | observed=402,971 rows (1.82%) expected=<= 5.0% Rows are quarantined individually; this gate stops a file that is broken wholesale.
+2026-09-25 16:28:43 INFO    wavpipe.validate | CTL01 PASS  Control data grain: one row per base per month | observed=309 rows, duplicates=[] expected=unique base_license_number 
+2026-09-25 16:28:43 INFO    wavpipe.validate | REC01-HV0003 PASS  File trips vs opendata_base_aggregate (HV0003) | observed=15,354,816 expected=15,354,816 +/- 0.5% diff +0 (+0.0000%)
+2026-09-25 16:28:43 INFO    wavpipe.validate | REC01-HV0005 PASS  File trips vs opendata_base_aggregate (HV0005) | observed=6,770,928 expected=6,770,928 +/- 0.5% diff +0 (+0.0000%)
+2026-09-25 16:28:43 INFO    wavpipe.validate | REC02-ALL SKIPPED File trips vs tlc_monthly_report (ALL) | observed=22,125,744 expected=UNAVAILABLE 
+2026-09-25 16:28:43 INFO    wavpipe.validate | retrieval completeness status for 2026-05: RECONCILED
+2026-09-25 16:28:50 INFO    wavpipe.pipeline | ==== 2026-05: PUBLISHED (RECONCILED, metrics FINAL)
+2026-09-25 16:28:50 INFO    wavpipe.pipeline | run 20260925T105810314Z finished: OK in 40.4s

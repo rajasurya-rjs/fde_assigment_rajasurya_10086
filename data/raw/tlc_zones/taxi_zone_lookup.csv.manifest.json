@@ -1,0 +1,12 @@
+{
+  "attempts": 1,
+  "bytes": 12331,
+  "content_length_header": null,
+  "etag": "W/\"c6064b7c144c716450641f769659d178\"",
+  "last_modified": "Thu, 22 Feb 2024 21:33:00 GMT",
+  "retrieved_at": "2026-09-25T10:56:54Z",
+  "seconds": 0.2,
+  "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+  "source": "zones",
+  "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
+}

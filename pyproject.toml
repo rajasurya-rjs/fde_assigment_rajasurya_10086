@@ -1,0 +1,17 @@
+[project]
+name = "wav-service-scorecard"
+version = "1.0.0"
+description = "Validated monthly pipeline for the NYC TLC wheelchair-accessible (WAV) 10-minute service standard"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb==1.5.5",
+    "requests==2.34.2",
+    "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

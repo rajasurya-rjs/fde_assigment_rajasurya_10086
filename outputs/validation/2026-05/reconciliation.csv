@@ -1,0 +1,4 @@
+control_source,scope,file_trips,control_trips,diff,diff_pct,status,diff_pct_rounded
+opendata_base_aggregate,HV0003,15354816,15354816,0,0.0,MATCH,0.0
+opendata_base_aggregate,HV0005,6770928,6770928,0,0.0,MATCH,0.0
+tlc_monthly_report,ALL,22125744,22125630,114,0.0005152395660598138,MATCH,0.00052

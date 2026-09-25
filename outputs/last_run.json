@@ -1,0 +1,763 @@
+{
+  "args": {
+    "allow_unreconciled": false,
+    "months": [
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07"
+    ],
+    "offline": true,
+    "refresh": false
+  },
+  "finished_at": "2026-09-25T12:04:20+00:00",
+  "git_commit": null,
+  "kpi_config": {
+    "hour_bands": [
+      [
+        0,
+        6,
+        "00-06 overnight"
+      ],
+      [
+        6,
+        10,
+        "06-10 AM peak"
+      ],
+      [
+        10,
+        16,
+        "10-16 midday"
+      ],
+      [
+        16,
+        20,
+        "16-20 PM peak"
+      ],
+      [
+        20,
+        24,
+        "20-24 evening"
+      ]
+    ],
+    "measurability_gate": 0.9,
+    "min_cell_requests": 100,
+    "target_rate": 0.9,
+    "threshold_seconds": 600
+  },
+  "log_file": "logs/run_20260925T120306160Z.log",
+  "months": {
+    "2026-04": {
+      "checks": [
+        {
+          "check_id": "FIL01",
+          "detail": "14 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time",
+          "expected": "11 contracted columns with fixed types",
+          "name": "Trip file schema contract",
+          "observed": "11 contracted columns OK",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL03",
+          "detail": "",
+          "expected": "30 days",
+          "name": "Every calendar day has pickups",
+          "observed": "30 of 30 days",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL04",
+          "detail": "Low days are reported, not dropped (could be weather/holiday or a partial extract).",
+          "expected": ">= 344,047 trips per day",
+          "name": "No day below 50% of the median daily volume",
+          "observed": "min 559,677 / median 688,094",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL07",
+          "detail": "HV0005 day 6: 127,028 (median 187,118)",
+          "expected": "0",
+          "name": "No licensee-day below 70% of that licensee's median day",
+          "observed": "1 low licensee-days",
+          "severity": "WARN",
+          "status": "WARN"
+        },
+        {
+          "check_id": "FIL02",
+          "detail": "",
+          "expected": "20,995,953",
+          "name": "Rows read by validation scan == rows declared in Parquet footer",
+          "observed": "20,995,953",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL05",
+          "detail": "",
+          "expected": "<= 1.0%",
+          "name": "Pickups outside the file month (partition contract)",
+          "observed": "0 rows (0.000%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL06",
+          "detail": "Rows are quarantined individually; this gate stops a file that is broken wholesale.",
+          "expected": "<= 5.0%",
+          "name": "Rows failing any ERROR rule (whole file)",
+          "observed": "362,125 rows (1.72%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "CTL01",
+          "detail": "",
+          "expected": "unique base_license_number",
+          "name": "Control data grain: one row per base per month",
+          "observed": "368 rows, duplicates=[]",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0003",
+          "detail": "diff +0 (+0.0000%)",
+          "expected": "15,378,858 +/- 0.5%",
+          "name": "File trips vs opendata_base_aggregate (HV0003)",
+          "observed": "15,378,858",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0005",
+          "detail": "diff +0 (+0.0000%)",
+          "expected": "5,617,095 +/- 0.5%",
+          "name": "File trips vs opendata_base_aggregate (HV0005)",
+          "observed": "5,617,095",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC02-ALL",
+          "detail": "diff +63 (+0.0003%)",
+          "expected": "20,995,890 +/- 0.5%",
+          "name": "File trips vs tlc_monthly_report (ALL)",
+          "observed": "20,995,953",
+          "severity": "FATAL",
+          "status": "PASS"
+        }
+      ],
+      "error": null,
+      "error_type": null,
+      "inputs": {
+        "base_aggregate": {
+          "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+          "expected_rows": 368,
+          "order": "base_license_number,:id",
+          "page_size": 200,
+          "retrieved_at": "2026-09-25T11:06:35Z",
+          "retrieved_rows": 368,
+          "source": "base_aggregate",
+          "status": "complete",
+          "where": "year=2026 AND month=4"
+        },
+        "monthly_report": {
+          "path": "/Users/rajasurya/fde_assigment_rajasurya_10086/data/raw/tlc_monthly_reports/data_reports_monthly.csv",
+          "status": "cached"
+        },
+        "trips": {
+          "attempts": 1,
+          "bytes": 509865567,
+          "content_encoding": "identity",
+          "content_length_header": 509865567,
+          "etag": "\"a856fda161d15104556f41b3d2aee48a-30\"",
+          "last_modified": "Thu, 21 May 2026 14:34:30 GMT",
+          "retrieved_at": "2026-09-25T11:06:33Z",
+          "seconds": 29.7,
+          "sha256": "15525aea9f82d55b885c6053414054e63f4c9abb3cdc44d78120a77d3aecc92b",
+          "source": "trips",
+          "status": "cached",
+          "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-04.parquet"
+        }
+      },
+      "metric_status": "FINAL",
+      "month": "2026-04",
+      "reconciliation": [
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": 15378858,
+          "diff": 0,
+          "diff_pct": 0.0,
+          "file_trips": 15378858,
+          "month": "2026-04",
+          "scope": "HV0003",
+          "status": "MATCH"
+        },
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": 5617095,
+          "diff": 0,
+          "diff_pct": 0.0,
+          "file_trips": 5617095,
+          "month": "2026-04",
+          "scope": "HV0005",
+          "status": "MATCH"
+        },
+        {
+          "control_source": "tlc_monthly_report",
+          "control_trips": 20995890,
+          "diff": 63,
+          "diff_pct": 0.00030005872577918823,
+          "file_trips": 20995953,
+          "month": "2026-04",
+          "scope": "ALL",
+          "status": "MATCH"
+        }
+      ],
+      "retrieval_status": "RECONCILED",
+      "seconds": 21.1,
+      "status": "PUBLISHED"
+    },
+    "2026-05": {
+      "checks": [
+        {
+          "check_id": "FIL01",
+          "detail": "14 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time",
+          "expected": "11 contracted columns with fixed types",
+          "name": "Trip file schema contract",
+          "observed": "11 contracted columns OK",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL03",
+          "detail": "",
+          "expected": "31 days",
+          "name": "Every calendar day has pickups",
+          "observed": "31 of 31 days",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL04",
+          "detail": "Low days are reported, not dropped (could be weather/holiday or a partial extract).",
+          "expected": ">= 355,026 trips per day",
+          "name": "No day below 50% of the median daily volume",
+          "observed": "min 545,860 / median 710,052",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL07",
+          "detail": "Localizes partial gaps; reconciliation remains the gate.",
+          "expected": "0",
+          "name": "No licensee-day below 70% of that licensee's median day",
+          "observed": "0 low licensee-days",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL02",
+          "detail": "",
+          "expected": "22,125,744",
+          "name": "Rows read by validation scan == rows declared in Parquet footer",
+          "observed": "22,125,744",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL05",
+          "detail": "",
+          "expected": "<= 1.0%",
+          "name": "Pickups outside the file month (partition contract)",
+          "observed": "0 rows (0.000%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL06",
+          "detail": "Rows are quarantined individually; this gate stops a file that is broken wholesale.",
+          "expected": "<= 5.0%",
+          "name": "Rows failing any ERROR rule (whole file)",
+          "observed": "402,971 rows (1.82%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "CTL01",
+          "detail": "",
+          "expected": "unique base_license_number",
+          "name": "Control data grain: one row per base per month",
+          "observed": "309 rows, duplicates=[]",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0003",
+          "detail": "diff +0 (+0.0000%)",
+          "expected": "15,354,816 +/- 0.5%",
+          "name": "File trips vs opendata_base_aggregate (HV0003)",
+          "observed": "15,354,816",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0005",
+          "detail": "diff +0 (+0.0000%)",
+          "expected": "6,770,928 +/- 0.5%",
+          "name": "File trips vs opendata_base_aggregate (HV0005)",
+          "observed": "6,770,928",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC02-ALL",
+          "detail": "diff +114 (+0.0005%)",
+          "expected": "22,125,630 +/- 0.5%",
+          "name": "File trips vs tlc_monthly_report (ALL)",
+          "observed": "22,125,744",
+          "severity": "FATAL",
+          "status": "PASS"
+        }
+      ],
+      "error": null,
+      "error_type": null,
+      "inputs": {
+        "base_aggregate": {
+          "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+          "expected_rows": 309,
+          "order": "base_license_number,:id",
+          "page_size": 200,
+          "retrieved_at": "2026-09-25T10:57:25Z",
+          "retrieved_rows": 309,
+          "source": "base_aggregate",
+          "status": "complete",
+          "where": "year=2026 AND month=5"
+        },
+        "monthly_report": {
+          "path": "/Users/rajasurya/fde_assigment_rajasurya_10086/data/raw/tlc_monthly_reports/data_reports_monthly.csv",
+          "status": "cached"
+        },
+        "trips": {
+          "attempts": 1,
+          "bytes": 537576484,
+          "content_length_header": 537576484,
+          "etag": "\"e4f4ba2ae1c4bdeb5456e456dd2efda8-32\"",
+          "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+          "retrieved_at": "2026-09-25T10:57:24Z",
+          "seconds": 30.4,
+          "sha256": "e2b633a5be2280da537b4138f5bcb198eb04a6d3c2ef6bf7bd647f5b2c995287",
+          "source": "trips",
+          "status": "cached",
+          "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-05.parquet"
+        }
+      },
+      "metric_status": "FINAL",
+      "month": "2026-05",
+      "reconciliation": [
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": 15354816,
+          "diff": 0,
+          "diff_pct": 0.0,
+          "file_trips": 15354816,
+          "month": "2026-05",
+          "scope": "HV0003",
+          "status": "MATCH"
+        },
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": 6770928,
+          "diff": 0,
+          "diff_pct": 0.0,
+          "file_trips": 6770928,
+          "month": "2026-05",
+          "scope": "HV0005",
+          "status": "MATCH"
+        },
+        {
+          "control_source": "tlc_monthly_report",
+          "control_trips": 22125630,
+          "diff": 114,
+          "diff_pct": 0.0005152395660598138,
+          "file_trips": 22125744,
+          "month": "2026-05",
+          "scope": "ALL",
+          "status": "MATCH"
+        }
+      ],
+      "retrieval_status": "RECONCILED",
+      "seconds": 21.7,
+      "status": "PUBLISHED"
+    },
+    "2026-06": {
+      "checks": [
+        {
+          "check_id": "FIL01",
+          "detail": "14 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time",
+          "expected": "11 contracted columns with fixed types",
+          "name": "Trip file schema contract",
+          "observed": "11 contracted columns OK",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL03",
+          "detail": "",
+          "expected": "30 days",
+          "name": "Every calendar day has pickups",
+          "observed": "30 of 30 days",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL04",
+          "detail": "Low days are reported, not dropped (could be weather/holiday or a partial extract).",
+          "expected": ">= 344,171 trips per day",
+          "name": "No day below 50% of the median daily volume",
+          "observed": "min 581,314 / median 688,342",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL07",
+          "detail": "HV0005 day 8: 117,202 (median 187,690), HV0005 day 9: 113,548 (median 187,690), HV0005 day 10: 113,530 (median 187,690)",
+          "expected": "0",
+          "name": "No licensee-day below 70% of that licensee's median day",
+          "observed": "3 low licensee-days",
+          "severity": "WARN",
+          "status": "WARN"
+        },
+        {
+          "check_id": "FIL02",
+          "detail": "",
+          "expected": "20,775,868",
+          "name": "Rows read by validation scan == rows declared in Parquet footer",
+          "observed": "20,775,868",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL05",
+          "detail": "",
+          "expected": "<= 1.0%",
+          "name": "Pickups outside the file month (partition contract)",
+          "observed": "0 rows (0.000%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL06",
+          "detail": "Rows are quarantined individually; this gate stops a file that is broken wholesale.",
+          "expected": "<= 5.0%",
+          "name": "Rows failing any ERROR rule (whole file)",
+          "observed": "385,486 rows (1.86%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0003",
+          "detail": "",
+          "expected": "NOT_PUBLISHED",
+          "name": "File trips vs opendata_base_aggregate (HV0003)",
+          "observed": "15,257,740",
+          "severity": "FATAL",
+          "status": "SKIPPED"
+        },
+        {
+          "check_id": "REC01-HV0005",
+          "detail": "",
+          "expected": "NOT_PUBLISHED",
+          "name": "File trips vs opendata_base_aggregate (HV0005)",
+          "observed": "5,518,128",
+          "severity": "FATAL",
+          "status": "SKIPPED"
+        },
+        {
+          "check_id": "REC02-ALL",
+          "detail": "diff -454,232 (-2.1396%)",
+          "expected": "21,230,100 +/- 0.5%",
+          "name": "File trips vs tlc_monthly_report (ALL)",
+          "observed": "20,775,868",
+          "severity": "FATAL",
+          "status": "FAIL"
+        }
+      ],
+      "error": "ALL: file 20,775,868 vs tlc_monthly_report 21,230,100 (-2.140%)",
+      "error_type": "ReconciliationError",
+      "inputs": {
+        "base_aggregate": {
+          "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+          "expected_rows": 0,
+          "order": "base_license_number,:id",
+          "page_size": 200,
+          "retrieved_at": "2026-09-25T11:35:33Z",
+          "retrieved_rows": 0,
+          "source": "base_aggregate",
+          "status": "not_published",
+          "where": "year=2026 AND month=6"
+        },
+        "monthly_report": {
+          "path": "/Users/rajasurya/fde_assigment_rajasurya_10086/data/raw/tlc_monthly_reports/data_reports_monthly.csv",
+          "status": "cached"
+        },
+        "trips": {
+          "attempts": 1,
+          "bytes": 506800012,
+          "content_encoding": "identity",
+          "content_length_header": 506800012,
+          "etag": "\"f984f6804c41a6f827d155442d807d96-30\"",
+          "last_modified": "Thu, 17 Sep 2026 14:43:53 GMT",
+          "retrieved_at": "2026-09-25T11:00:59Z",
+          "seconds": 23.3,
+          "sha256": "300f8dccfae9025383deeec3c1daecf6c16653615dbdcfec8d77a76804314f48",
+          "source": "trips",
+          "status": "cached",
+          "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-06.parquet"
+        }
+      },
+      "metric_status": null,
+      "month": "2026-06",
+      "reconciliation": [
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": null,
+          "diff": null,
+          "diff_pct": null,
+          "file_trips": 15257740,
+          "month": "2026-06",
+          "scope": "HV0003",
+          "status": "NOT_PUBLISHED"
+        },
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": null,
+          "diff": null,
+          "diff_pct": null,
+          "file_trips": 5518128,
+          "month": "2026-06",
+          "scope": "HV0005",
+          "status": "NOT_PUBLISHED"
+        },
+        {
+          "control_source": "tlc_monthly_report",
+          "control_trips": 21230100,
+          "diff": -454232,
+          "diff_pct": -2.139565993565739,
+          "file_trips": 20775868,
+          "month": "2026-06",
+          "scope": "ALL",
+          "status": "MISMATCH"
+        }
+      ],
+      "retrieval_status": null,
+      "seconds": 9.7,
+      "status": "FAILED"
+    },
+    "2026-07": {
+      "checks": [
+        {
+          "check_id": "FIL01",
+          "detail": "14 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time",
+          "expected": "11 contracted columns with fixed types",
+          "name": "Trip file schema contract",
+          "observed": "11 contracted columns OK",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL03",
+          "detail": "",
+          "expected": "31 days",
+          "name": "Every calendar day has pickups",
+          "observed": "31 of 31 days",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL04",
+          "detail": "Low days are reported, not dropped (could be weather/holiday or a partial extract).",
+          "expected": ">= 335,806 trips per day",
+          "name": "No day below 50% of the median daily volume",
+          "observed": "min 580,100 / median 671,612",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL07",
+          "detail": "Localizes partial gaps; reconciliation remains the gate.",
+          "expected": "0",
+          "name": "No licensee-day below 70% of that licensee's median day",
+          "observed": "0 low licensee-days",
+          "severity": "WARN",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL02",
+          "detail": "",
+          "expected": "20,921,249",
+          "name": "Rows read by validation scan == rows declared in Parquet footer",
+          "observed": "20,921,249",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL05",
+          "detail": "",
+          "expected": "<= 1.0%",
+          "name": "Pickups outside the file month (partition contract)",
+          "observed": "0 rows (0.000%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "FIL06",
+          "detail": "Rows are quarantined individually; this gate stops a file that is broken wholesale.",
+          "expected": "<= 5.0%",
+          "name": "Rows failing any ERROR rule (whole file)",
+          "observed": "367,170 rows (1.76%)",
+          "severity": "FATAL",
+          "status": "PASS"
+        },
+        {
+          "check_id": "REC01-HV0003",
+          "detail": "",
+          "expected": "NOT_PUBLISHED",
+          "name": "File trips vs opendata_base_aggregate (HV0003)",
+          "observed": "15,215,374",
+          "severity": "FATAL",
+          "status": "SKIPPED"
+        },
+        {
+          "check_id": "REC01-HV0005",
+          "detail": "",
+          "expected": "NOT_PUBLISHED",
+          "name": "File trips vs opendata_base_aggregate (HV0005)",
+          "observed": "5,705,875",
+          "severity": "FATAL",
+          "status": "SKIPPED"
+        },
+        {
+          "check_id": "REC02-ALL",
+          "detail": "diff +62 (+0.0003%)",
+          "expected": "20,921,187 +/- 0.5%",
+          "name": "File trips vs tlc_monthly_report (ALL)",
+          "observed": "20,921,249",
+          "severity": "FATAL",
+          "status": "PASS"
+        }
+      ],
+      "error": null,
+      "error_type": null,
+      "inputs": {
+        "base_aggregate": {
+          "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+          "expected_rows": 0,
+          "order": "base_license_number,:id",
+          "page_size": 200,
+          "retrieved_at": "2026-09-25T11:35:58Z",
+          "retrieved_rows": 0,
+          "source": "base_aggregate",
+          "status": "not_published",
+          "where": "year=2026 AND month=7"
+        },
+        "monthly_report": {
+          "path": "/Users/rajasurya/fde_assigment_rajasurya_10086/data/raw/tlc_monthly_reports/data_reports_monthly.csv",
+          "status": "cached"
+        },
+        "trips": {
+          "attempts": 1,
+          "bytes": 511176663,
+          "content_encoding": "identity",
+          "content_length_header": 511176663,
+          "etag": "\"0075ffa5d0ecb2946a4b4e8f2d7158a5-30\"",
+          "last_modified": "Thu, 17 Sep 2026 14:43:53 GMT",
+          "retrieved_at": "2026-09-25T11:01:52Z",
+          "seconds": 19.8,
+          "sha256": "8da280d9d23813aae02a6e1d1d1caa8b96eb5e8d38efcbc9a570faf1e418f5a8",
+          "source": "trips",
+          "status": "cached",
+          "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-07.parquet"
+        }
+      },
+      "metric_status": "PROVISIONAL",
+      "month": "2026-07",
+      "reconciliation": [
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": null,
+          "diff": null,
+          "diff_pct": null,
+          "file_trips": 15215374,
+          "month": "2026-07",
+          "scope": "HV0003",
+          "status": "NOT_PUBLISHED"
+        },
+        {
+          "control_source": "opendata_base_aggregate",
+          "control_trips": null,
+          "diff": null,
+          "diff_pct": null,
+          "file_trips": 5705875,
+          "month": "2026-07",
+          "scope": "HV0005",
+          "status": "NOT_PUBLISHED"
+        },
+        {
+          "control_source": "tlc_monthly_report",
+          "control_trips": 20921187,
+          "diff": 62,
+          "diff_pct": 0.00029635029790613695,
+          "file_trips": 20921249,
+          "month": "2026-07",
+          "scope": "ALL",
+          "status": "MATCH"
+        }
+      ],
+      "retrieval_status": "RECONCILED_FALLBACK",
+      "seconds": 21.4,
+      "status": "PUBLISHED"
+    }
+  },
+  "reference": {
+    "checks": [
+      {
+        "check_id": "ZON01",
+        "detail": "",
+        "expected": "4 contracted columns with fixed types",
+        "name": "Zone lookup schema contract",
+        "observed": "4 contracted columns OK",
+        "severity": "FATAL",
+        "status": "PASS"
+      },
+      {
+        "check_id": "ZON02",
+        "detail": "",
+        "expected": "rows == distinct ids",
+        "name": "Zone lookup: LocationID unique (valid join key)",
+        "observed": "265 rows, 265 distinct ids (1-265)",
+        "severity": "FATAL",
+        "status": "PASS"
+      }
+    ],
+    "zones": {
+      "attempts": 1,
+      "bytes": 12331,
+      "content_length_header": null,
+      "etag": "W/\"c6064b7c144c716450641f769659d178\"",
+      "last_modified": "Thu, 22 Feb 2024 21:33:00 GMT",
+      "retrieved_at": "2026-09-25T10:56:54Z",
+      "seconds": 0.2,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "source": "zones",
+      "status": "cached",
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
+    }
+  },
+  "run_id": "20260925T120306160Z",
+  "seconds": 74.1,
+  "started_at": "2026-09-25T12:03:06+00:00",
+  "status": "PARTIAL"
+}

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="560" viewBox="0 0 1480 560" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Pipeline flow and failure handling">
+<title>Pipeline flow and failure handling</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5a6a"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a3261f"/></marker></defs>
+<rect width="1480" height="560" fill="#ffffff"/>
+<text x="20" y="32" font-size="19" font-weight="bold" fill="#1f3a5f" text-anchor="start">Pipeline — python run_pipeline.py --month YYYY-MM   (per month: every check runs BEFORE the publish transaction)</text>
+<rect x="20" y="70" width="180" height="196" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="30" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">1 INGEST</text>
+<text x="30" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">4 sources, 2 modes</text>
+<text x="30" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(HTTPS files + SODA API)</text>
+<text x="30" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">write .part → verify</text>
+<text x="30" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">Content-Length → SHA-256</text>
+<text x="30" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ atomic rename</text>
+<text x="30" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">manifest.json per input</text>
+<text x="30" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">reuse raw on rerun;</text>
+<text x="30" y="220.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">--refresh: new file to</text>
+<text x="30" y="236.60000000000002" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">.incoming, old kept in</text>
+<text x="30" y="252.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">superseded/</text>
+<line x1="201" y1="168.0" x2="221" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="222" y="70" width="180" height="196" rx="6" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="1.2"/>
+<text x="232" y="89" font-size="13" font-weight="bold" fill="#0f6e6e" text-anchor="start">2 PROFILE</text>
+<text x="232" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">one pass over the raw</text>
+<text x="232" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">file, before cleaning:</text>
+<text x="232" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">nulls, EXACT distinct,</text>
+<text x="232" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">min / max / mean</text>
+<text x="232" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">+ raw response P01/</text>
+<text x="232" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">P50/P99 per segment</text>
+<text x="232" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">staged; published only</text>
+<text x="232" y="220.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">with its month</text>
+<line x1="403" y1="168.0" x2="423" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="424" y="70" width="180" height="196" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<text x="434" y="89" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">3 VALIDATE file</text>
+<text x="434" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL01 schema contract</text>
+<text x="434" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL02 rows read = footer</text>
+<text x="434" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL03 every day present</text>
+<text x="434" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL04/07 low-volume days</text>
+<text x="434" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL05 month partition</text>
+<text x="434" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">FIL06 error rows ≤ 5%</text>
+<line x1="605" y1="168.0" x2="625" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="626" y="70" width="180" height="196" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<text x="636" y="89" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">4 VALIDATE rows</text>
+<text x="636" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">13 business rules</text>
+<text x="636" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">schema · referential ·</text>
+<text x="636" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">temporal · domain · grain</text>
+<text x="636" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">ERROR → quarantine</text>
+<text x="636" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">WARN → keep + count</text>
+<text x="636" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">one SQL pass / month</text>
+<text x="636" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">exact-duplicate check</text>
+<line x1="807" y1="168.0" x2="827" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="828" y="70" width="180" height="196" rx="6" fill="#fdf3dc" stroke="#8a5a00" stroke-width="1.2"/>
+<text x="838" y="89" font-size="13" font-weight="bold" fill="#8a5a00" text-anchor="start">5 RECONCILE</text>
+<text x="838" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">file trips vs S3 API</text>
+<text x="838" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">(licensee, exact)</text>
+<text x="838" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">and S4 report (total)</text>
+<text x="838" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">match → FINAL</text>
+<text x="838" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">S3 not yet published</text>
+<text x="838" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">+ S4 match → PROVISIONAL</text>
+<text x="838" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">mismatch → refuse</text>
+<line x1="1009" y1="168.0" x2="1029" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="1030" y="70" width="180" height="196" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1040" y="89" font-size="13" font-weight="bold" fill="#1f3a5f" text-anchor="start">6 MODEL</text>
+<text x="1040" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">ONE transaction:</text>
+<text x="1040" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">DELETE month;</text>
+<text x="1040" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">INSERT fact, aggregates,</text>
+<text x="1040" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">evidence, month_status</text>
+<text x="1040" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">PKs enforce grain</text>
+<text x="1040" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ rerun = replace,</text>
+<text x="1040" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">never append</text>
+<line x1="1211" y1="168.0" x2="1231" y2="168.0" stroke="#4a5a6a" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="1232" y="70" width="180" height="196" rx="6" fill="#e8eef6" stroke="#1f3a5f" stroke-width="1.2"/>
+<text x="1242" y="89" font-size="13" font-weight="bold" fill="#1f3a5f" text-anchor="start">7 METRICS + OUTPUT</text>
+<text x="1242" y="107.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">views m1–m5 (+ YTD)</text>
+<text x="1242" y="123.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">verdict from bounds:</text>
+<text x="1242" y="139.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">proven / estimate /</text>
+<text x="1242" y="155.6" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">withheld</text>
+<text x="1242" y="171.8" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">CSV exports, sorted</text>
+<text x="1242" y="188.0" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">scorecard.md</text>
+<text x="1242" y="204.2" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">validation/&lt;month&gt;/</text>
+<text x="1242" y="220.4" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">last_run.json</text>
+<text x="20" y="312" font-size="15" font-weight="bold" fill="#a3261f" text-anchor="start">Failure handling — what happens when…</text>
+<rect x="20" y="326" width="715" height="36" rx="6" fill="#f4f6f8" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="30" y="349" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">a download drops / truncates</text>
+<text x="275" y="349" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ retry ×3 with backoff; .part deleted; never renamed into place</text>
+<rect x="745" y="326" width="715" height="36" rx="6" fill="#f4f6f8" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="755" y="349" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">the month is not published (404)</text>
+<text x="1000" y="349" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ fail fast, no retries; other months continue</text>
+<rect x="20" y="370" width="715" height="36" rx="6" fill="#f4f6f8" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="30" y="393" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">the SODA API is down</text>
+<text x="275" y="393" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ reuse preserved pages; if none → control UNAVAILABLE → PROVISIONAL</text>
+<rect x="745" y="370" width="715" height="36" rx="6" fill="#fbe9e7" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="755" y="393" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">a raw file changed / refresh fails</text>
+<text x="1000" y="393" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ SHA-256 ≠ manifest → stop; failed refresh keeps old raw</text>
+<rect x="20" y="414" width="715" height="36" rx="6" fill="#fbe9e7" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="30" y="437" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">the schema changes</text>
+<text x="275" y="437" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ missing / retyped column → stop; new column → WARN only</text>
+<rect x="745" y="414" width="715" height="36" rx="6" fill="#f4f6f8" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="755" y="437" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">rows are impossible or duplicated</text>
+<text x="1000" y="437" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ quarantined with reasons; verdict proven / estimate / withheld</text>
+<rect x="20" y="458" width="715" height="36" rx="6" fill="#fbe9e7" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="30" y="481" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">counts disagree with a control</text>
+<text x="275" y="481" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ month REFUSED (June 2026: −2.14%); evidence kept, nothing published</text>
+<rect x="745" y="458" width="715" height="36" rx="6" fill="#f4f6f8" stroke="#d9c4c1" stroke-width="1.2"/>
+<text x="755" y="481" font-size="12" font-weight="bold" fill="#a3261f" text-anchor="start">the pipeline runs twice</text>
+<text x="1000" y="481" font-size="12" font-weight="normal" fill="#1b2733" text-anchor="start">→ byte-identical outputs; month replaced in one transaction</text>
+<text x="20" y="520" font-size="12" font-weight="bold" fill="#1f3a5f" text-anchor="start">A failed month is rolled back: its previously published version stays untouched (last known good). Every attempt is appended to pipeline_run. Exit code 1 if any month failed.</text>
+</svg>

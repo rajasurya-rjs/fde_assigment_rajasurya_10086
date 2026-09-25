@@ -1,0 +1,11 @@
+check_id,name,severity,status,observed,expected,detail
+FIL01,Trip file schema contract,FATAL,PASS,11 contracted columns OK,11 contracted columns with fixed types,"14 uncontracted columns ignored: access_a_ride_flag, airport_fee, base_passenger_fare, bcf, cbd_congestion_fee, congestion_surcharge, driver_pay, sales_tax, shared_match_flag, shared_request_flag, tips, tolls, trip_miles, trip_time"
+FIL02,Rows read by validation scan == rows declared in Parquet footer,FATAL,PASS,"20,775,868","20,775,868",
+FIL03,Every calendar day has pickups,FATAL,PASS,30 of 30 days,30 days,
+FIL04,No day below 50% of the median daily volume,WARN,PASS,"min 581,314 / median 688,342",">= 344,171 trips per day","Low days are reported, not dropped (could be weather/holiday or a partial extract)."
+FIL05,Pickups outside the file month (partition contract),FATAL,PASS,0 rows (0.000%),<= 1.0%,
+FIL06,Rows failing any ERROR rule (whole file),FATAL,PASS,"385,486 rows (1.86%)",<= 5.0%,Rows are quarantined individually; this gate stops a file that is broken wholesale.
+FIL07,No licensee-day below 70% of that licensee's median day,WARN,WARN,3 low licensee-days,0,"HV0005 day 8: 117,202 (median 187,690), HV0005 day 9: 113,548 (median 187,690), HV0005 day 10: 113,530 (median 187,690)"
+REC01-HV0003,File trips vs opendata_base_aggregate (HV0003),FATAL,SKIPPED,"15,257,740",NOT_PUBLISHED,
+REC01-HV0005,File trips vs opendata_base_aggregate (HV0005),FATAL,SKIPPED,"5,518,128",NOT_PUBLISHED,
+REC02-ALL,File trips vs tlc_monthly_report (ALL),FATAL,FAIL,"20,775,868","21,230,100 +/- 0.5%","diff -454,232 (-2.1396%)"

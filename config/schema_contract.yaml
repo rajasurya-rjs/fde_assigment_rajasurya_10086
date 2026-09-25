@@ -1,0 +1,21 @@
+# Columns the pipeline depends on (11), with the DuckDB type observed in TLC files (2025-2026).
+# Missing column or changed type -> FATAL (the month is stopped before any metric is computed).
+# Extra columns -> WARN only (TLC added cbd_congestion_fee in 2025 without notice).
+trips:
+  hvfhs_license_num: VARCHAR
+  dispatching_base_num: VARCHAR
+  originating_base_num: VARCHAR
+  request_datetime: TIMESTAMP
+  on_scene_datetime: TIMESTAMP
+  pickup_datetime: TIMESTAMP
+  dropoff_datetime: TIMESTAMP
+  PULocationID: INTEGER
+  DOLocationID: INTEGER
+  wav_request_flag: VARCHAR
+  wav_match_flag: VARCHAR
+
+zones:
+  LocationID: BIGINT
+  Borough: VARCHAR
+  Zone: VARCHAR
+  service_zone: VARCHAR

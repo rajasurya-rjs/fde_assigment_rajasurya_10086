@@ -1,0 +1,25 @@
+{
+  "endpoint": "https://data.cityofnewyork.us/resource/2v9c-2k7f.json",
+  "expected_rows": 368,
+  "order": "base_license_number,:id",
+  "page_size": 200,
+  "pages": [
+    {
+      "file": "page_0000.json",
+      "offset": 0,
+      "rows": 200,
+      "sha256": "b2d9a802b36f906c08e937b76049f394aa3535371376998cbfe50ffd403b5df8"
+    },
+    {
+      "file": "page_0001.json",
+      "offset": 200,
+      "rows": 168,
+      "sha256": "6108705c0332c470e74fda26bf9711a02d7738dc8dca720af2e1b00b8300c44a"
+    }
+  ],
+  "retrieved_at": "2026-09-25T11:06:35Z",
+  "retrieved_rows": 368,
+  "source": "base_aggregate",
+  "status": "complete",
+  "where": "year=2026 AND month=4"
+}

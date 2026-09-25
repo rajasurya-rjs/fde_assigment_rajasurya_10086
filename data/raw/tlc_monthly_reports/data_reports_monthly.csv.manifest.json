@@ -1,0 +1,13 @@
+{
+  "attempts": 1,
+  "bytes": 79774,
+  "content_encoding": "identity",
+  "content_length_header": null,
+  "etag": "\"6ab11e3e-1379e:dtagent10345260810170330iVRF\"",
+  "last_modified": "Mon, 21 Sep 2026 12:08:29 GMT",
+  "retrieved_at": "2026-09-25T10:59:18Z",
+  "seconds": 0.4,
+  "sha256": "47fa867bf3a72416b3eaca7770b44313fa5645fb5e8102f77f14c797c38ebf94",
+  "source": "monthly_reports",
+  "url": "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv"
+}

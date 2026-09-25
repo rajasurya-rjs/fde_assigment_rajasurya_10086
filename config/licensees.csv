@@ -1,0 +1,5 @@
+hvfhs_license_num,brand,control_key,note
+HV0002,Juno,,Listed in TLC HVFHS data dictionary; no longer operating
+HV0003,Uber,UBER,Accessible Vehicle dispatcher; control rows appear as base_license_number=UBER in Open Data 2v9c-2k7f
+HV0004,Via,,Listed in TLC HVFHS data dictionary; no longer operating
+HV0005,Lyft,LYFT,Accessible Vehicle dispatcher; control rows appear as base_license_number=LYFT in Open Data 2v9c-2k7f

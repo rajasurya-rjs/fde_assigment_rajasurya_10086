@@ -1,0 +1,76 @@
+month,hvfhs_license_num,brand,pu_borough,hour_band,wav_requests_clean,wav_service_rate_10min,wilson_low,wilson_high,wav_late_arrivals,wav_response_p90_min,nonwav_service_rate_10min,judged,below_target,significantly_below
+2026-04,HV0003,Uber,Bronx,00-06 overnight,126,0.9762,0.9323,0.9919,3,8.2833,0.8642,true,false,false
+2026-04,HV0003,Uber,Bronx,06-10 AM peak,986,0.9442,0.9281,0.9569,55,8.8333,0.8848,true,false,false
+2026-04,HV0003,Uber,Bronx,10-16 midday,3482,0.9472,0.9392,0.9541,184,8.5333,0.9212,true,false,false
+2026-04,HV0003,Uber,Bronx,16-20 PM peak,1020,0.9451,0.9294,0.9575,56,8.7833,0.9134,true,false,false
+2026-04,HV0003,Uber,Bronx,20-24 evening,473,0.9493,0.9256,0.9657,24,8.52,0.8799,true,false,false
+2026-04,HV0003,Uber,Brooklyn,00-06 overnight,362,0.9392,0.9097,0.9595,22,8.5217,0.8841,true,false,false
+2026-04,HV0003,Uber,Brooklyn,06-10 AM peak,1813,0.9581,0.9478,0.9664,76,8.3667,0.9009,true,false,false
+2026-04,HV0003,Uber,Brooklyn,10-16 midday,6124,0.9659,0.961,0.9701,209,7.6833,0.9368,true,false,false
+2026-04,HV0003,Uber,Brooklyn,16-20 PM peak,2312,0.9728,0.9653,0.9786,63,7.4,0.9488,true,false,false
+2026-04,HV0003,Uber,Brooklyn,20-24 evening,981,0.9613,0.9473,0.9716,38,8.0,0.9179,true,false,false
+2026-04,HV0003,Uber,Manhattan,00-06 overnight,254,0.9528,0.9193,0.9728,12,8.34,0.9271,true,false,false
+2026-04,HV0003,Uber,Manhattan,06-10 AM peak,1876,0.967,0.9579,0.9741,62,7.6583,0.9622,true,false,false
+2026-04,HV0003,Uber,Manhattan,10-16 midday,9080,0.9628,0.9587,0.9665,338,7.7,0.9632,true,false,false
+2026-04,HV0003,Uber,Manhattan,16-20 PM peak,3591,0.9591,0.9521,0.9651,147,7.8167,0.9595,true,false,false
+2026-04,HV0003,Uber,Manhattan,20-24 evening,1475,0.9566,0.945,0.9659,64,7.7833,0.9409,true,false,false
+2026-04,HV0003,Uber,Queens,00-06 overnight,185,0.8703,0.8142,0.9112,24,11.5033,0.8517,true,true,false
+2026-04,HV0003,Uber,Queens,06-10 AM peak,900,0.9589,0.9438,0.97,37,8.1683,0.9224,true,false,false
+2026-04,HV0003,Uber,Queens,10-16 midday,3083,0.9627,0.9554,0.9688,115,8.1167,0.9336,true,false,false
+2026-04,HV0003,Uber,Queens,16-20 PM peak,1326,0.9532,0.9405,0.9634,62,8.325,0.9144,true,false,false
+2026-04,HV0003,Uber,Queens,20-24 evening,549,0.8561,0.8243,0.883,79,11.2067,0.8163,true,true,true
+2026-04,HV0003,Uber,Staten Island,00-06 overnight,2,1.0,0.3424,1.0,0,6.2033,0.7274,false,false,false
+2026-04,HV0003,Uber,Staten Island,06-10 AM peak,58,0.9828,0.9086,0.9969,1,7.4517,0.8585,false,false,false
+2026-04,HV0003,Uber,Staten Island,10-16 midday,270,0.9593,0.9285,0.9771,11,8.4883,0.8901,true,false,false
+2026-04,HV0003,Uber,Staten Island,16-20 PM peak,84,0.9286,0.8528,0.9669,6,8.7367,0.8875,false,false,false
+2026-04,HV0003,Uber,Staten Island,20-24 evening,35,0.9714,0.8547,0.9949,1,7.5833,0.8031,false,false,false
+2026-05,HV0003,Uber,Bronx,00-06 overnight,131,0.9466,0.8938,0.9739,7,8.8833,0.8712,true,false,false
+2026-05,HV0003,Uber,Bronx,06-10 AM peak,1005,0.9363,0.9195,0.9498,64,8.73,0.8781,true,false,false
+2026-05,HV0003,Uber,Bronx,10-16 midday,3278,0.939,0.9303,0.9467,200,8.8667,0.9045,true,false,false
+2026-05,HV0003,Uber,Bronx,16-20 PM peak,1016,0.9498,0.9346,0.9616,51,8.6167,0.9053,true,false,false
+2026-05,HV0003,Uber,Bronx,20-24 evening,439,0.9294,0.9015,0.9498,31,9.2667,0.8612,true,false,false
+2026-05,HV0003,Uber,Brooklyn,00-06 overnight,398,0.9598,0.9357,0.9751,16,8.2467,0.8739,true,false,false
+2026-05,HV0003,Uber,Brooklyn,06-10 AM peak,1796,0.9465,0.9352,0.956,96,8.5083,0.884,true,false,false
+2026-05,HV0003,Uber,Brooklyn,10-16 midday,5942,0.9576,0.9522,0.9624,252,8.2483,0.9207,true,false,false
+2026-05,HV0003,Uber,Brooklyn,16-20 PM peak,2375,0.9659,0.9578,0.9725,81,7.8167,0.9357,true,false,false
+2026-05,HV0003,Uber,Brooklyn,20-24 evening,1102,0.9564,0.9427,0.967,48,8.4333,0.903,true,false,false
+2026-05,HV0003,Uber,Manhattan,00-06 overnight,309,0.9482,0.9176,0.9679,16,7.96,0.9145,true,false,false
+2026-05,HV0003,Uber,Manhattan,06-10 AM peak,1779,0.955,0.9444,0.9637,80,8.2533,0.9504,true,false,false
+2026-05,HV0003,Uber,Manhattan,10-16 midday,8640,0.9501,0.9453,0.9545,431,8.3333,0.9468,true,false,false
+2026-05,HV0003,Uber,Manhattan,16-20 PM peak,3659,0.9445,0.9366,0.9515,203,8.52,0.939,true,false,false
+2026-05,HV0003,Uber,Manhattan,20-24 evening,1438,0.9548,0.9428,0.9644,65,7.9667,0.9283,true,false,false
+2026-05,HV0003,Uber,Queens,00-06 overnight,222,0.8649,0.8136,0.9037,30,10.775,0.8487,true,true,false
+2026-05,HV0003,Uber,Queens,06-10 AM peak,992,0.9546,0.9398,0.9659,45,8.41,0.9187,true,false,false
+2026-05,HV0003,Uber,Queens,10-16 midday,3241,0.9562,0.9486,0.9627,142,8.3833,0.9273,true,false,false
+2026-05,HV0003,Uber,Queens,16-20 PM peak,1422,0.9297,0.9152,0.9418,100,8.9333,0.9117,true,false,false
+2026-05,HV0003,Uber,Queens,20-24 evening,663,0.8507,0.8215,0.8758,99,11.48,0.811,true,true,true
+2026-05,HV0003,Uber,Staten Island,00-06 overnight,2,1.0,0.3424,1.0,0,5.205,0.7423,false,false,false
+2026-05,HV0003,Uber,Staten Island,06-10 AM peak,48,0.9375,0.8316,0.9785,3,9.2667,0.8551,false,false,false
+2026-05,HV0003,Uber,Staten Island,10-16 midday,279,0.957,0.9263,0.9752,12,8.55,0.8777,true,false,false
+2026-05,HV0003,Uber,Staten Island,16-20 PM peak,97,0.9381,0.8716,0.9713,6,8.8033,0.8812,false,false,false
+2026-05,HV0003,Uber,Staten Island,20-24 evening,42,0.9762,0.8768,0.9958,1,7.8317,0.7835,false,false,false
+2026-07,HV0003,Uber,Bronx,00-06 overnight,173,0.8497,0.7889,0.8953,26,10.9533,0.8572,true,true,true
+2026-07,HV0003,Uber,Bronx,06-10 AM peak,1014,0.8718,0.8498,0.891,130,10.4617,0.8791,true,true,true
+2026-07,HV0003,Uber,Bronx,10-16 midday,3485,0.9105,0.9005,0.9195,312,9.7167,0.9059,true,false,false
+2026-07,HV0003,Uber,Bronx,16-20 PM peak,1007,0.8868,0.8657,0.9049,114,10.2,0.8999,true,true,false
+2026-07,HV0003,Uber,Bronx,20-24 evening,512,0.8594,0.8266,0.8868,72,10.7817,0.8453,true,true,true
+2026-07,HV0003,Uber,Brooklyn,00-06 overnight,398,0.9095,0.8773,0.9339,36,9.905,0.862,true,false,false
+2026-07,HV0003,Uber,Brooklyn,06-10 AM peak,1617,0.9048,0.8895,0.9181,154,9.89,0.8823,true,false,false
+2026-07,HV0003,Uber,Brooklyn,10-16 midday,6052,0.9503,0.9445,0.9555,301,8.4,0.9173,true,false,false
+2026-07,HV0003,Uber,Brooklyn,16-20 PM peak,2449,0.9498,0.9404,0.9577,123,8.3333,0.9352,true,false,false
+2026-07,HV0003,Uber,Brooklyn,20-24 evening,1151,0.914,0.8964,0.9288,99,9.5167,0.8882,true,false,false
+2026-07,HV0003,Uber,Manhattan,00-06 overnight,396,0.9444,0.9173,0.963,22,8.8167,0.927,true,false,false
+2026-07,HV0003,Uber,Manhattan,06-10 AM peak,1739,0.9063,0.8917,0.9191,163,9.7367,0.955,true,false,false
+2026-07,HV0003,Uber,Manhattan,10-16 midday,8552,0.9417,0.9365,0.9464,499,8.5,0.9499,true,false,false
+2026-07,HV0003,Uber,Manhattan,16-20 PM peak,3327,0.9158,0.9059,0.9248,280,9.3733,0.9414,true,false,false
+2026-07,HV0003,Uber,Manhattan,20-24 evening,1413,0.9292,0.9147,0.9415,100,8.84,0.9367,true,false,false
+2026-07,HV0003,Uber,Queens,00-06 overnight,346,0.7948,0.7491,0.834,71,12.9167,0.8207,true,true,true
+2026-07,HV0003,Uber,Queens,06-10 AM peak,1023,0.9335,0.9166,0.9472,68,9.23,0.9228,true,false,false
+2026-07,HV0003,Uber,Queens,10-16 midday,3497,0.9497,0.9419,0.9564,176,8.39,0.9222,true,false,false
+2026-07,HV0003,Uber,Queens,16-20 PM peak,1665,0.9183,0.9042,0.9305,136,9.4133,0.9142,true,false,false
+2026-07,HV0003,Uber,Queens,20-24 evening,927,0.7001,0.6698,0.7287,278,14.8433,0.8158,true,true,true
+2026-07,HV0003,Uber,Staten Island,00-06 overnight,8,0.875,0.5291,0.9776,1,15.9317,0.704,false,false,false
+2026-07,HV0003,Uber,Staten Island,06-10 AM peak,52,0.8077,0.681,0.892,10,11.6083,0.8532,false,false,false
+2026-07,HV0003,Uber,Staten Island,10-16 midday,294,0.8707,0.8276,0.9044,38,10.6017,0.8694,true,true,false
+2026-07,HV0003,Uber,Staten Island,16-20 PM peak,97,0.8969,0.8205,0.943,10,10.0533,0.876,false,false,false
+2026-07,HV0003,Uber,Staten Island,20-24 evening,34,0.7353,0.5688,0.854,9,12.7433,0.7675,false,false,false
