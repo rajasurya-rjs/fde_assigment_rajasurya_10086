@@ -10,8 +10,8 @@
     "offline": true,
     "refresh": false
   },
-  "finished_at": "2026-09-25T12:04:20+00:00",
-  "git_commit": null,
+  "finished_at": "2026-09-25T12:32:51+00:00",
+  "git_commit": "5b3e534",
   "kpi_config": {
     "hour_bands": [
       [
@@ -45,7 +45,7 @@
     "target_rate": 0.9,
     "threshold_seconds": 600
   },
-  "log_file": "logs/run_20260925T120306160Z.log",
+  "log_file": "logs/run_20260925T123126767Z.log",
   "months": {
     "2026-04": {
       "checks": [
@@ -217,7 +217,7 @@
         }
       ],
       "retrieval_status": "RECONCILED",
-      "seconds": 21.1,
+      "seconds": 28.3,
       "status": "PUBLISHED"
     },
     "2026-05": {
@@ -389,7 +389,7 @@
         }
       ],
       "retrieval_status": "RECONCILED",
-      "seconds": 21.7,
+      "seconds": 24.3,
       "status": "PUBLISHED"
     },
     "2026-06": {
@@ -553,7 +553,7 @@
         }
       ],
       "retrieval_status": null,
-      "seconds": 9.7,
+      "seconds": 7.8,
       "status": "FAILED"
     },
     "2026-07": {
@@ -717,7 +717,7 @@
         }
       ],
       "retrieval_status": "RECONCILED_FALLBACK",
-      "seconds": 21.4,
+      "seconds": 23.9,
       "status": "PUBLISHED"
     }
   },
@@ -756,8 +756,8 @@
       "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
     }
   },
-  "run_id": "20260925T120306160Z",
-  "seconds": 74.1,
-  "started_at": "2026-09-25T12:03:06+00:00",
+  "run_id": "20260925T123126767Z",
+  "seconds": 84.7,
+  "started_at": "2026-09-25T12:31:26+00:00",
   "status": "PARTIAL"
 }
