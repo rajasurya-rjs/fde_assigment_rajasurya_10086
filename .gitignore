@@ -21,3 +21,7 @@ data/raw/tlc_trips/superseded/*.parquet*
 data/warehouse/
 logs/
 .DS_Store
+
+# FlashEats classroom pack (course data, fetched by Challenges/get_pack.sh; not committed)
+Challenges/flasheats-classroom-pack/
+.ipynb_checkpoints/

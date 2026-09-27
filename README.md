@@ -23,6 +23,7 @@ report a KPI the data cannot support.
 | [`docs/judgement_call.md`](docs/judgement_call.md) | The FDE judgement call explained in the demo |
 | [`docs/rubric_map.md`](docs/rubric_map.md) | Where the evidence for each grading dimension lives |
 | [`submission/FDE_WAV_Evidence_Sheet.pdf`](submission/FDE_WAV_Evidence_Sheet.pdf) | 2-page evidence sheet |
+| [`Challenges/`](Challenges/) | The FlashEats in-class challenge notebooks (Classes 5–7), answered and executed |
 
 ---
 

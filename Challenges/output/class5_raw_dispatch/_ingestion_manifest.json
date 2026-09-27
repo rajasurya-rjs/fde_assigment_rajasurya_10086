@@ -1,0 +1,184 @@
+{
+ "proof": {
+  "pages_fetched": 32,
+  "records_retrieved": 1600,
+  "api_total_records": 1600,
+  "unique_order_ids": 1600,
+  "expected_pages": 32,
+  "retries": 2
+ },
+ "attempt_log": [
+  {
+   "page": 1,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 2,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 3,
+   "attempt": 1,
+   "status": 500,
+   "retry_in_s": 1
+  },
+  {
+   "page": 3,
+   "attempt": 2,
+   "status": 200
+  },
+  {
+   "page": 4,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 5,
+   "attempt": 1,
+   "status": 429,
+   "retry_in_s": 1.0
+  },
+  {
+   "page": 5,
+   "attempt": 2,
+   "status": 200
+  },
+  {
+   "page": 6,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 7,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 8,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 9,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 10,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 11,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 12,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 13,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 14,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 15,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 16,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 17,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 18,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 19,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 20,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 21,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 22,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 23,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 24,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 25,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 26,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 27,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 28,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 29,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 30,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 31,
+   "attempt": 1,
+   "status": 200
+  },
+  {
+   "page": 32,
+   "attempt": 1,
+   "status": 200
+  }
+ ]
+}
